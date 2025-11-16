@@ -46,7 +46,17 @@ const Scan = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            data: [base64Image],
+            data: [
+              {
+                path: null,
+                url: selectedImage, // Send the full data URL with base64
+                size: null,
+                orig_name: "fruit.jpg",
+                mime_type: "image/jpeg",
+                is_stream: false,
+                meta: { _type: "gradio.FileData" }
+              }
+            ]
           }),
         }
       );
