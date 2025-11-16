@@ -12,7 +12,7 @@ const Home = () => {
         {/* Logo/Icon */}
         <div className="mb-8 relative">
           <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
-            <Apple className="w-14 h-14 text-primary" />
+            <Apple className="w-14 h-14 text-red-500" />
           </div>
           <Leaf className="w-8 h-8 text-primary absolute -top-2 -right-2" />
         </div>
