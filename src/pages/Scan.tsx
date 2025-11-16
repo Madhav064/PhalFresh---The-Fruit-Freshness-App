@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Camera, Upload, ArrowLeft, Loader2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { Client } from "@gradio/client";
 
 const Scan = () => {
   const navigate = useNavigate();
@@ -36,46 +37,26 @@ const Scan = () => {
     setIsLoading(true);
 
     try {
-      const base64Image = convertToBase64(selectedImage);
+      // Connect to the Gradio Space
+      const client = await Client.connect("Ishitamonua/PhalFresh");
       
-      const response = await fetch(
-        "https://ishitamonua-phalfresh.hf.space/api/predict",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            data: [
-              {
-                path: null,
-                url: selectedImage, // Send the full data URL with base64
-                size: null,
-                orig_name: "fruit.jpg",
-                mime_type: "image/jpeg",
-                is_stream: false,
-                meta: { _type: "gradio.FileData" }
-              }
-            ]
-          }),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("API request failed");
-      }
-
-      const result = await response.json();
+      // Make the prediction with the base64 image
+      const result = await client.predict("/predict", {
+        image: selectedImage
+      });
+      
+      console.log("API Result:", result);
       
       // Navigate to results with the data
       navigate("/results", {
         state: {
           image: selectedImage,
-          result: result.data[0],
+          result: result.data,
         },
       });
     } catch (error) {
       console.error("Error analyzing fruit:", error);
+      toast.error("Failed to analyze fruit. Please try again.");
       navigate("/error");
     } finally {
       setIsLoading(false);
