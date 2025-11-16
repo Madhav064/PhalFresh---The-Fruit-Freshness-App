@@ -2,12 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Apple, Camera, Leaf } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-
 const Home = () => {
   const navigate = useNavigate();
-
-  return (
-    <div className="min-h-screen bg-background flex flex-col">
+  return <div className="min-h-screen bg-background flex flex-col">
       <div className="flex-1 flex flex-col items-center justify-center p-6 max-w-md mx-auto w-full">
         {/* Logo/Icon */}
         <div className="mb-8 relative">
@@ -28,11 +25,7 @@ const Home = () => {
         </p>
 
         {/* Main CTA */}
-        <Button
-          size="lg"
-          onClick={() => navigate("/scan")}
-          className="w-full max-w-xs h-14 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
-        >
+        <Button size="lg" onClick={() => navigate("/scan")} className="w-full max-w-xs h-14 text-lg font-semibold shadow-lg hover:shadow-xl transition-all">
           <Camera className="mr-2 h-5 w-5" />
           Scan Fruit
         </Button>
@@ -64,10 +57,8 @@ const Home = () => {
 
       {/* Footer */}
       <div className="p-6 text-center text-sm text-muted-foreground">
-        <p>Powered by AI Technology</p>
+        <p>National Institute of Technology, Delhi        </p>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
