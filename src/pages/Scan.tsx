@@ -39,18 +39,14 @@ const Scan = () => {
       const base64Image = convertToBase64(selectedImage);
       
       const response = await fetch(
-        "https://ishitamonua-phalfresh.hf.space/run/predict",
+        "https://ishitamonua-phalfresh.hf.space/api/predict",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            data: [
-              {
-                data: base64Image,
-              },
-            ],
+            data: [base64Image],
           }),
         }
       );
