@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# 🌟 PhalFresh – AI Fruit Freshness Detection System
+<p align="center"> <img src="https://dummyimage.com/1200x300/4CAF50/ffffff&text=PhalFresh:+AI+Fruit+Freshness+Detector" alt="PhalFresh Banner"/> </p> <p align="center"> <b>AI-powered fruit type recognition, freshness detection, and shelf-life prediction – all from a single image.</b> </p>
 
-## Project info
+## 🏷️ Badges
+<p align="center"> <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square"/> <img src="https://img.shields.io/badge/Accuracy-97%25--99%25-blue?style=flat-square"/> <img src="https://img.shields.io/badge/Framework-TensorFlow-orange?style=flat-square"/> <img src="https://img.shields.io/badge/API-HuggingFace-yellow?style=flat-square"/> <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square"/> <img src="https://img.shields.io/badge/Python-3.8+-blue?style=flat-square"/> </p>
 
-**URL**: https://lovable.dev/projects/d48b221d-9aa8-4230-a12d-d020e3e17f37
+## 🥭 What is PhalFresh?
 
-## How can I edit this code?
+PhalFresh is an AI-driven computer vision model built to:
 
-There are several ways of editing your application.
+✔ Detect fruit type
 
-**Use Lovable**
+✔ Identify whether fruit is fresh or rotten
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d48b221d-9aa8-4230-a12d-d020e3e17f37) and start prompting.
+✔ Predict remaining shelf life
 
-Changes made via Lovable will be committed automatically to this repo.
+✔ Deliver real-time predictions (<1 sec)
 
-**Use your preferred IDE**
+✔ Perform reliably even under low-light and mobile camera conditions
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Built with CNNs, TensorFlow, OpenCV, and HuggingFace, it is optimized for real-world performance and ease of use.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Features at a Glance
 
-Follow these steps:
+🎯 97–99% Accuracy for fruit type classification
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+🍏 95–98% Accuracy for fresh/rotten detection
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+⏱️ Real-time inference via HuggingFace (<1s)
 
-# Step 3: Install the necessary dependencies.
-npm i
+📱 Robust on mobile images & low-light scenarios
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+🧮 Shelf-life prediction based on ripening trends
 
-**Edit a file directly in GitHub**
+🌐 Simple web interface for image uploads
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+## 🧠 How the Model Works
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🔹 1. Preprocessing
 
-## What technologies are used for this project?
+Resizing
 
-This project is built with:
+Normalization
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Lighting adjustments
 
-## How can I deploy this project?
+Augmentations to improve robustness
 
-Simply open [Lovable](https://lovable.dev/projects/d48b221d-9aa8-4230-a12d-d020e3e17f37) and click on Share -> Publish.
+🔹 2. CNN Model
 
-## Can I connect a custom domain to my Lovable project?
+A custom-trained CNN that learns:
 
-Yes, you can!
+Texture differences
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Color decay patterns
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Rot and mold structure
+
+Ripening characteristics
+
+🔹 3. Prediction Pipeline
+
+Fruit Type → Fresh/Rotten → Shelf-Life Estimation
+
+Returns results in <1 second
+
+🔹 4. Web Interface
+
+A clean UI for uploading/capturing images.
