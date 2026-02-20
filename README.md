@@ -68,3 +68,4 @@ Returns results in <1 second
 🔹 4. Web Interface
 
 A clean UI for uploading/capturing images.
+
